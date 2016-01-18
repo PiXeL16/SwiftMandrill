@@ -92,8 +92,9 @@
 		83F1DE561C4D8DAA000A2701 /* SwiftMandrill */ = {
 			isa = PBXGroup;
 			children = (
-				83F1DE571C4D8DAA000A2701 /* SwiftMandrill.h */,
-				83F1DE591C4D8DAA000A2701 /* Info.plist */,
+				83F1DE711C4D9263000A2701 /* Api */,
+				83F1DE701C4D9236000A2701 /* Supporting Files */,
+				83F1DE6F1C4D91EC000A2701 /* Model */,
 			);
 			path = SwiftMandrill;
 			sourceTree = "<group>";
@@ -105,6 +106,29 @@
 				83F1DE651C4D8DAA000A2701 /* Info.plist */,
 			);
 			path = SwiftMandrillTests;
+			sourceTree = "<group>";
+		};
+		83F1DE6F1C4D91EC000A2701 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		83F1DE701C4D9236000A2701 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				83F1DE571C4D8DAA000A2701 /* SwiftMandrill.h */,
+				83F1DE591C4D8DAA000A2701 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		83F1DE711C4D9263000A2701 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Api;
 			sourceTree = "<group>";
 		};
 		E38C04B69BB1B0FC4BCC920D /* Pods */ = {
