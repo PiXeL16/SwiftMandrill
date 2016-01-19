@@ -8,14 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		79B69B51E466032F1EE5C688 /* Pods_SwiftMandrillTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDBDA66A8218612AE0C967B3 /* Pods_SwiftMandrillTests.framework */; };
+		835399401C4EEAD00089FAC5 /* MandrillErrorResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8353993F1C4EEAD00089FAC5 /* MandrillErrorResult.swift */; };
 		838046651C4D9481005EE191 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838046641C4D9481005EE191 /* Constants.swift */; };
 		838046671C4D9E9E005EE191 /* MandrillEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838046661C4D9E9E005EE191 /* MandrillEmail.swift */; };
 		838046691C4DA8AC005EE191 /* MandrillResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838046681C4DA8AC005EE191 /* MandrillResult.swift */; };
+		8380466B1C4EB534005EE191 /* MandrillTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8380466A1C4EB534005EE191 /* MandrillTo.swift */; };
+		8380466E1C4EC382005EE191 /* MandrillEmailResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8380466D1C4EC382005EE191 /* MandrillEmailResult.swift */; };
+		838046761C4ED23E005EE191 /* MandrillApiSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838046751C4ED23E005EE191 /* MandrillApiSpecs.swift */; };
 		83F1DE581C4D8DAA000A2701 /* SwiftMandrill.h in Headers */ = {isa = PBXBuildFile; fileRef = 83F1DE571C4D8DAA000A2701 /* SwiftMandrill.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		83F1DE5F1C4D8DAA000A2701 /* SwiftMandrill.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F1DE541C4D8DAA000A2701 /* SwiftMandrill.framework */; };
 		83F1DE641C4D8DAA000A2701 /* SwiftMandrillTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F1DE631C4D8DAA000A2701 /* SwiftMandrillTests.swift */; };
 		83F1DE731C4D92FA000A2701 /* MandrillAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F1DE721C4D92FA000A2701 /* MandrillAPI.swift */; };
-		83F1DE741C4D92FA000A2701 /* MandrillAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F1DE721C4D92FA000A2701 /* MandrillAPI.swift */; };
 		D741B909C9D6B07769BDE1D6 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73E4AEAF62018D0943795764 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,9 +36,13 @@
 		1DC8B32AD2996F851D26A966 /* Pods-SwiftMandrillTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftMandrillTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftMandrillTests/Pods-SwiftMandrillTests.release.xcconfig"; sourceTree = "<group>"; };
 		6465ABE755C786F0D5C9EE39 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		73E4AEAF62018D0943795764 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8353993F1C4EEAD00089FAC5 /* MandrillErrorResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MandrillErrorResult.swift; sourceTree = "<group>"; };
 		838046641C4D9481005EE191 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		838046661C4D9E9E005EE191 /* MandrillEmail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MandrillEmail.swift; sourceTree = "<group>"; };
 		838046681C4DA8AC005EE191 /* MandrillResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MandrillResult.swift; sourceTree = "<group>"; };
+		8380466A1C4EB534005EE191 /* MandrillTo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MandrillTo.swift; sourceTree = "<group>"; };
+		8380466D1C4EC382005EE191 /* MandrillEmailResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MandrillEmailResult.swift; sourceTree = "<group>"; };
+		838046751C4ED23E005EE191 /* MandrillApiSpecs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MandrillApiSpecs.swift; sourceTree = "<group>"; };
 		83F1DE541C4D8DAA000A2701 /* SwiftMandrill.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftMandrill.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83F1DE571C4D8DAA000A2701 /* SwiftMandrill.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftMandrill.h; sourceTree = "<group>"; };
 		83F1DE591C4D8DAA000A2701 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -113,6 +120,7 @@
 			children = (
 				83F1DE631C4D8DAA000A2701 /* SwiftMandrillTests.swift */,
 				83F1DE651C4D8DAA000A2701 /* Info.plist */,
+				838046751C4ED23E005EE191 /* MandrillApiSpecs.swift */,
 			);
 			path = SwiftMandrillTests;
 			sourceTree = "<group>";
@@ -122,6 +130,9 @@
 			children = (
 				838046661C4D9E9E005EE191 /* MandrillEmail.swift */,
 				838046681C4DA8AC005EE191 /* MandrillResult.swift */,
+				8380466A1C4EB534005EE191 /* MandrillTo.swift */,
+				8380466D1C4EC382005EE191 /* MandrillEmailResult.swift */,
+				8353993F1C4EEAD00089FAC5 /* MandrillErrorResult.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -348,7 +359,10 @@
 			files = (
 				83F1DE731C4D92FA000A2701 /* MandrillAPI.swift in Sources */,
 				838046691C4DA8AC005EE191 /* MandrillResult.swift in Sources */,
+				8380466B1C4EB534005EE191 /* MandrillTo.swift in Sources */,
 				838046651C4D9481005EE191 /* Constants.swift in Sources */,
+				835399401C4EEAD00089FAC5 /* MandrillErrorResult.swift in Sources */,
+				8380466E1C4EC382005EE191 /* MandrillEmailResult.swift in Sources */,
 				838046671C4D9E9E005EE191 /* MandrillEmail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,7 +372,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83F1DE641C4D8DAA000A2701 /* SwiftMandrillTests.swift in Sources */,
-				83F1DE741C4D92FA000A2701 /* MandrillAPI.swift in Sources */,
+				838046761C4ED23E005EE191 /* MandrillApiSpecs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

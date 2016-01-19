@@ -6,8 +6,29 @@
 //  Copyright © 2016 greenpixels. All rights reserved.
 //
 
-import UIKit
+import Foundation
+import ObjectMapper
 
-class MandrillResult: NSObject {
-
+public class MandrillResult{
+    
+    public var emailsResults : [MandrillEmailResult]?
+    
+    public var success: Bool = false
+    public var message: String?
+    
+    public var hasError : Bool{
+        return !success
+    }
+    
+    public init(success:Bool, message:String){
+        self.success = success
+        self.message = message
+    }
+    
+    public init(success:Bool, emailResults:[MandrillEmailResult])
+    {
+        self.success = success
+        self.emailsResults = emailResults
+    }
 }
+

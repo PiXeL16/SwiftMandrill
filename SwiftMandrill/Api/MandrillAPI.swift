@@ -8,7 +8,7 @@
 
 import Alamofire
 
-import Himotoki
+import ObjectMapper
 
 /// Mandrill API access and definition
 public class MandrillAPI {
@@ -54,23 +54,64 @@ public class MandrillAPI {
     
     
     
-    public func sendEmail(withEmail email:MandrillEmail)
+    /**
+     Sends an email using the Mandrill email object values and returns the result in the result handler
+     
+     - parameter email:             Email Object
+     - parameter completionHandler: Result completion handler
+     */
+    public func sendEmail(withEmail email:MandrillEmail, completionHandler:(MandrillResult) -> Void) -> Void
     {
         
-        Alamofire.request(.POST, ApiRouter.sendMessage, parameters: nil, encoding: .JSON)
-            .responseJSON { response in
-                guard response.result.error == nil else {
-                    // got an error in getting the data, need to handle it
-                    print("error calling \(ApiRouter.sendMessage)")
-                    print(response.result.error!)
-                    return
-                }
+        let params : [String:AnyObject]  = [
+            "key": self.apiKey,
+            "message": Mapper().toJSON(email)
+        ]
+        
+        Alamofire.request(.POST, ApiRouter.sendMessage.URLString, parameters: params, encoding: .JSON)
+            .validate()
+            .responseJSON {response in
                 
-                //TODO: Add parsing
-                if let value: AnyObject = response.result.value {
-                    // handle the results as JSON, without a bunch of nested if loops
-//                    let post = JSON(value)
-//                    print("The post is: " + post.description)
+                switch response.result
+                {
+                    
+                case .Failure(let error):
+                    
+                    
+                        print("error calling \(ApiRouter.sendMessage)")
+                        print(error)
+                        
+                        var errorMessage = error.description
+                        
+                        //Parse message from API
+                        if let data = response.data
+                        {
+                            if let errorResult = Mapper<MandrillErrorResult>().map(String(data: data, encoding: NSUTF8StringEncoding))
+                            {
+                                 errorMessage = errorResult.message!
+                            }
+                        }
+                        
+                        let result = MandrillResult(success: false, message: errorMessage)
+                        
+                        completionHandler(result)
+                        return
+                    
+                case .Success:
+                    
+                    if let value: AnyObject = response.result.value {
+                        
+                        let emailResults:[MandrillEmailResult] = Mapper<MandrillEmailResult>().mapArray(value)!
+                        
+                        let result = MandrillResult(success: true, emailResults: emailResults)
+                        
+                        completionHandler(result)
+                        
+                        return
+                        
+                        
+                    }
+                    
                 }
         }
     }
