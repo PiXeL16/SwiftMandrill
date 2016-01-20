@@ -75,8 +75,25 @@ class MandrillApiSpecs: QuickSpec {
             
         }
         
+        it("send email with inline parameters to several recipients"){
+            
+            let keys = SwiftmandrillKeys()
+            
+            let api = MandrillAPI(ApiKey: keys.mANDRILL_API())
+            
+            var result : MandrillResult? = nil
+            
+            api.sendEmail(from: "test@test.com", to: ["cjimenez16@gmail.com","test2@test.com"], subject: "test", html: "test", text: "test"){ mandrillResult in
+                result = mandrillResult
+            }
+            
+            expect(result).toEventuallyNot(beNil(),timeout:timeout)
+            expect(result!.hasError).toEventually(beFalsy(),timeout:timeout)
+            expect(result!.message).toEventually(beNil(), timeout:timeout)
+            
+        }
         
-        it("send email to several senders"){
+        it("send email to several recipients with email object"){
             
             let keys = SwiftmandrillKeys()
             

@@ -1,4 +1,55 @@
 # SwiftMandrill
-A iOS client for the Mandrill Mail API
+A simple iOS client for the Mandrill Mail API
 
-#WIP
+:question: Why?
+----
+Sometimes, there is the need to setup a simple email form in your iOS app, or trigger an email after an action without having to setup your own service for that, sometimes you don't want to use the `MailComposeViewController` or use a `SMTP` library.
+This provide a simple alternative when you need to send an email with your iOS app.
+
+:monkey: Mandrill
+----
+[Mandrill](https://www.google.com) provides a simple  reliable API for transactional emails. You will need to have a `Mandrill` account use the client and a `API` key.
+
+:octocat: Installation
+----
+Get `SwiftMandrill` on CocoaPods, just add `pod 'SwiftMandrill'` to your Podfile.
+
+:mortar_board: Usage
+-----
+Usage is very simple
+
+```swift
+let api = MandrillAPI(ApiKey: "YourApiKey")
+
+api.sendEmail(from: "from@test.com", to: "to@test.com",subject: "My subject", html: "<b>This is a Test</b>", text: "This is a test"){ mandrillResult in
+    if mandrillResult.success {
+      print("Email was sent!"")
+    }
+}
+```
+
+You can also send an email to several recipients by passing an array
+
+```swift
+let api = MandrillAPI(ApiKey: "YourApiKey")
+
+api.sendEmail(from: "from@test.com", to: ["to@test.com","to@test2.com"],subject: "My subject", html: "<b>This is a Test</b>", text: "This is a test"){ mandrillResult in
+    if mandrillResult.success {
+      print("Email was sent!"")
+    }
+}
+```
+
+:wrench: TODO
+-----
+* Most of the API is still not cover, stuff like tracking, templates, search, etc will be a nice addition.
+
+* Carthage support
+
+:v: License
+-------
+MIT
+
+:alien: Author
+------
+Chris Jimenez - http://chrisjimenez.net, [@chrisjimeneznat](http://twitter.com/chrisjimeneznat)

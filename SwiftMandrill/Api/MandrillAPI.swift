@@ -70,6 +70,26 @@ public class MandrillAPI {
         return sendEmail(withEmail: email, completionHandler: completionHandler)
     }
     
+    /**
+     Sends an email to an array of recipients
+     
+     - parameter from:              from
+     - parameter to:                array of recypients
+     - parameter subject:           subject
+     - parameter html:              html
+     - parameter text:              text
+     - parameter completionHandler: the completion handler
+     */
+    public func sendEmail(from from:String, to:[String], subject:String, html:String?, text:String?, completionHandler:(MandrillResult) -> Void) -> Void
+        
+    {
+        let emails = to.map({MandrillTo(email: $0)})
+        
+        let email = MandrillEmail(from: from, to: emails, subject: subject, html: html, text: text)
+        
+        return sendEmail(withEmail: email, completionHandler: completionHandler)
+    }
+    
     
     /**
      Sends an email using the Mandrill email object values and returns the result in the result handler
