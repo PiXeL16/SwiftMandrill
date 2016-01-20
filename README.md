@@ -27,7 +27,7 @@ api.sendEmail(from: "from@test.com",
               html: "<b>This is a Test</b>",
               text: "This is a test"){ mandrillResult in
     if mandrillResult.success {
-      print("Email was sent!"")
+      print("Email was sent!")
     }
 }
 ```
@@ -43,7 +43,7 @@ api.sendEmail(from: "from@test.com",
              html: "<b>This is a Test</b>",
             text: "This is a test"){ mandrillResult in
     if mandrillResult.success {
-      print("Email was sent!"")
+      print("Email was sent!")
     }
 }
 ```
