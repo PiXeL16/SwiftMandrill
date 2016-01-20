@@ -1,0 +1,14 @@
+{
+    "html": "<p>Example HTML content</p>",
+    "text": "Example text content",
+    "subject": "example subject",
+    "from_email": "message.from_email@example.com",
+    "from_name": "Example Name",
+    "to": [
+           {
+           "email": "recipient.email@example.com",
+           "name": "Recipient Name",
+           "type": "to"
+           }
+    ]
+}

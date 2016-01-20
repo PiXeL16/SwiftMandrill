@@ -18,12 +18,22 @@ public class MandrillEmail: Mappable{
     public var html    :String?
     public var text    :String?
     
-    
     public required init?(_ map: Map) {}
     
     public init(){}
     
-    public convenience init(from: String, to: [MandrillTo], subject: String, html: String, text: String)
+    /**
+     Constructor that receives an array of several to emails
+     
+     - parameter from:
+     - parameter to:
+     - parameter subject:
+     - parameter html:
+     - parameter text:
+     
+     - returns:
+     */
+    public convenience init(from: String, to: [MandrillTo], subject: String, html: String?, text: String?)
     {
         self.init()
         
@@ -36,7 +46,18 @@ public class MandrillEmail: Mappable{
     }
     
     
-    public convenience init(from: String, to: String, subject: String, html: String, text: String)
+    /**
+     Constructor to be used when sending to a single sender
+     
+     - parameter from:
+     - parameter to:
+     - parameter subject:
+     - parameter html:
+     - parameter text:
+     
+     - returns: <#return value description#>
+     */
+    public convenience init(from: String, to: String, subject: String, html: String?, text: String?)
     {
         self.init()
         
@@ -51,6 +72,11 @@ public class MandrillEmail: Mappable{
         
     }
     
+    /**
+     Mapping functionality for serialization/deserialization
+     
+     - parameter map: <#map description#>
+     */
     public func mapping(map: Map){
         to      <- map["to"]
         from    <- map["from_email"]

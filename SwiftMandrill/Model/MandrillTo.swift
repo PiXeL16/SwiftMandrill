@@ -9,21 +9,13 @@
 import Foundation
 import ObjectMapper
 
+/// Represent a to object in the email
 public class MandrillTo: Mappable{
     
-    public enum ToType : CustomStringConvertible {
-        case To;
-        case CC;
-        case BCC;
-        
-        public var description : String {
-            switch self {
-                // Use Internationalization, as appropriate.
-            case .To: return "to";
-            case .CC: return "cc";
-            case .BCC: return "bcc";
-            }
-        }
+    public enum ToType : String {
+        case To = "to"
+        case CC = "cc"
+        case BCC = "bcc"
     }
     
     public var email: String?
@@ -31,8 +23,6 @@ public class MandrillTo: Mappable{
     public var toType: ToType?
     
     public required init?(_ map: Map) {}
-    
-    public init(){}
     
     public init(email: String)
     {

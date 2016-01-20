@@ -9,17 +9,16 @@
 import Foundation
 import ObjectMapper
 
-public class MandrillErrorResult:Mappable {
+/// Error object when the email fails
+public class MandrillError:Mappable {
     
-    var status :String?
-    var code : Int?
-    var name : String?
-    var message :String?
+    public var status :String?
+    public var code : Int?
+    public var name : String?
+    public var message :String?
     
     
     public required init?(_ map: Map) {}
-    
-    public init(){}
     
     public func mapping(map: Map) {
         status     <- map["status"]

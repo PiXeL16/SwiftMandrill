@@ -9,8 +9,10 @@
 import Foundation
 import ObjectMapper
 
+/// Class with the results of the MailAPI
 public class MandrillResult{
     
+    /// Results for all the mail sendis
     public var emailsResults : [MandrillEmailResult]?
     
     public var success: Bool = false

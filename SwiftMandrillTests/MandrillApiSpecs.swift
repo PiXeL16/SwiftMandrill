@@ -43,7 +43,7 @@ class MandrillApiSpecs: QuickSpec {
         
             let api = MandrillAPI(ApiKey: keys.mANDRILL_API())
             
-            let email = MandrillEmail(from: "test@tapp.cr", to: "ngarcia@soin.co.cr", subject: "this is s test", html: "test", text: "test")
+            let email = MandrillEmail(from: "test@test.com", to: "cjimenez16@gmail.com", subject: "this is s test", html: "test", text: "test")
             
             var result : MandrillResult? = nil
             
@@ -56,7 +56,49 @@ class MandrillApiSpecs: QuickSpec {
             expect(result!.message).toEventually(beNil(), timeout:timeout)
 
         }
-    
+        
+        it("send email with inline parameters"){
+            
+            let keys = SwiftmandrillKeys()
+            
+            let api = MandrillAPI(ApiKey: keys.mANDRILL_API())
+            
+            var result : MandrillResult? = nil
+            
+            api.sendEmail(from: "test@test.com", to: "cjimenez16@gmail.com", subject: "test", html: "test", text: "test"){ mandrillResult in
+                result = mandrillResult
+            }
+
+            expect(result).toEventuallyNot(beNil(),timeout:timeout)
+            expect(result!.hasError).toEventually(beFalsy(),timeout:timeout)
+            expect(result!.message).toEventually(beNil(), timeout:timeout)
+            
+        }
+        
+        
+        it("send email to several senders"){
+            
+            let keys = SwiftmandrillKeys()
+            
+            let api = MandrillAPI(ApiKey: keys.mANDRILL_API())
+            
+            var result : MandrillResult? = nil
+            
+            let to1 = MandrillTo(email: "test@test.com")
+            let to2 = MandrillTo(email: "test@test2.com")
+            
+            let email = MandrillEmail(from: "test@test.com", to: [to1,to2], subject: "test", html: "test", text: "test")
+            
+            api.sendEmail(withEmail: email){ mandrillResult in
+                result = mandrillResult
+            }
+            
+            expect(result).toEventuallyNot(beNil(),timeout:timeout)
+            expect(result!.hasError).toEventually(beFalsy(),timeout:timeout)
+            expect(result!.message).toEventually(beNil(), timeout:timeout)
+            
+        }
+
     }
     
 }

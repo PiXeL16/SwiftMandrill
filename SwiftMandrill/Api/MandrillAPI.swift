@@ -7,7 +7,6 @@
 //
 
 import Alamofire
-
 import ObjectMapper
 
 /// Mandrill API access and definition
@@ -15,7 +14,7 @@ public class MandrillAPI {
     
     private let apiKey : String
     
-
+    
     //ApiRouter enum that will take care of the routing of the urls and paths of the API
     private enum ApiRouter: URLStringConvertible {
         
@@ -53,6 +52,24 @@ public class MandrillAPI {
     }
     
     
+    /**
+     Sends an email with the inline parameters
+     
+     - parameter from:              from email
+     - parameter to:                to email
+     - parameter subject:           subject of the email
+     - parameter html:              html
+     - parameter text:              text
+     - parameter completionHandler: the completion handler
+     */
+    public func sendEmail(from from:String, to:String, subject:String, html:String?, text:String?, completionHandler:(MandrillResult) -> Void) -> Void
+        
+    {
+        let email = MandrillEmail(from: from, to: to, subject: subject, html: html, text: text)
+        
+        return sendEmail(withEmail: email, completionHandler: completionHandler)
+    }
+    
     
     /**
      Sends an email using the Mandrill email object values and returns the result in the result handler
@@ -78,24 +95,23 @@ public class MandrillAPI {
                 case .Failure(let error):
                     
                     
-                        print("error calling \(ApiRouter.sendMessage)")
-                        print(error)
-                        
-                        var errorMessage = error.description
-                        
-                        //Parse message from API
-                        if let data = response.data
+                    print("error calling \(ApiRouter.sendMessage)")
+                    print(error)
+                    
+                    var errorMessage = error.description
+                    
+                    if let data = response.data
+                    {
+                        if let errorResult = Mapper<MandrillError>().map(String(data: data, encoding: NSUTF8StringEncoding))
                         {
-                            if let errorResult = Mapper<MandrillErrorResult>().map(String(data: data, encoding: NSUTF8StringEncoding))
-                            {
-                                 errorMessage = errorResult.message!
-                            }
+                            errorMessage = errorResult.message!
                         }
-                        
-                        let result = MandrillResult(success: false, message: errorMessage)
-                        
-                        completionHandler(result)
-                        return
+                    }
+                    
+                    let result = MandrillResult(success: false, message: errorMessage)
+                    
+                    completionHandler(result)
+                    return
                     
                 case .Success:
                     

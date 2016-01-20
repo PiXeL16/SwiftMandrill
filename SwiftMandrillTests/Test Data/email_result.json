@@ -1,0 +1,6 @@
+{
+  "email": "recipient.email@example.com",
+  "status": "sent",
+  "reject_reason": "hard-bounce",
+  "_id": "abc123abc123abc123abc123abc123"
+}
