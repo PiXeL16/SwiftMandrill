@@ -20,7 +20,7 @@ class TestDataModelSpecs: QuickSpec{
         
         it("Decode email result"){
             
-            let emailResult: MandrillEmailResult? = ObjectFromJson.objectFromFile("email_result")
+            let emailResult: MandrillEmailResult? = ObjectParser.objectFromJson(JSONFileReader.JSON(fromFile: "email_result"))
             
             expect(emailResult).toNot(beNil())
             expect(emailResult!.email).toNot(beNil())
@@ -30,7 +30,7 @@ class TestDataModelSpecs: QuickSpec{
         
         it("Decode email array result"){
             
-            let emailResult: [MandrillEmailResult]? = ObjectFromJson.objectFromFile("email_result_array")
+            let emailResult: [MandrillEmailResult]? = ObjectParser.objectFromJsonArray(JSONFileReader.JSON(fromFile: "email_result_array"))
             
             expect(emailResult).toNot(beNil())
             expect(emailResult!.count).to(equal(1))
@@ -39,7 +39,7 @@ class TestDataModelSpecs: QuickSpec{
         
         it("Decode to object"){
             
-            let emailTo: MandrillTo? = ObjectFromJson.objectFromFile("email_to")
+            let emailTo: MandrillTo? = ObjectParser.objectFromJson(JSONFileReader.JSON(fromFile: "email_to"))
             
             expect(emailTo).toNot(beNil())
             expect(emailTo!.email).toNot(beNil())
@@ -52,7 +52,7 @@ class TestDataModelSpecs: QuickSpec{
         
         it("Decode email"){
             
-            let emailObject: MandrillEmail? = ObjectFromJson.objectFromFile("email")
+            let emailObject: MandrillEmail? = ObjectParser.objectFromJson(JSONFileReader.JSON(fromFile: "email"))
             
             expect(emailObject).toNot(beNil())
             expect(emailObject!.from).toNot(beNil())
@@ -62,7 +62,7 @@ class TestDataModelSpecs: QuickSpec{
         
         it("Decode error result"){
             
-            let error: MandrillError? = ObjectFromJson.objectFromFile("error")
+            let error: MandrillError? = ObjectParser.objectFromJson(JSONFileReader.JSON(fromFile: "error"))
             
             expect(error).toNot(beNil())
             expect(error!.message).toNot(beNil())

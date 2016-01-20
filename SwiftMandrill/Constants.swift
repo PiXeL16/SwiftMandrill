@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ *  Project constants
+ */
 public struct Constants {
     
     public static let baseAPIURL = "https://mandrillapp.com/api/1.0";

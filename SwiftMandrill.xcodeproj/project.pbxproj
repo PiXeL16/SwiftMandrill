@@ -19,10 +19,10 @@
 		83B4491E1C4F01B000FC1D65 /* TestDataModelSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B4491C1C4F01B000FC1D65 /* TestDataModelSpecs.swift */; };
 		83B449211C4F031300FC1D65 /* email_result.json in Resources */ = {isa = PBXBuildFile; fileRef = 83B449201C4F031300FC1D65 /* email_result.json */; };
 		83B449231C4F071D00FC1D65 /* email_result_array.json in Resources */ = {isa = PBXBuildFile; fileRef = 83B449221C4F071D00FC1D65 /* email_result_array.json */; };
-		83B449261C4F07A100FC1D65 /* ObjectFromJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B449241C4F07A100FC1D65 /* ObjectFromJson.swift */; };
 		83B449281C4F0ABE00FC1D65 /* email_to.json in Resources */ = {isa = PBXBuildFile; fileRef = 83B449271C4F0ABE00FC1D65 /* email_to.json */; };
 		83B4492A1C4F0CA600FC1D65 /* email.json in Resources */ = {isa = PBXBuildFile; fileRef = 83B449291C4F0CA600FC1D65 /* email.json */; };
 		83B4492C1C4F0E1400FC1D65 /* error.json in Resources */ = {isa = PBXBuildFile; fileRef = 83B4492B1C4F0E1400FC1D65 /* error.json */; };
+		83B4492F1C5004D300FC1D65 /* ObjectParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B4492E1C5004D300FC1D65 /* ObjectParser.swift */; };
 		83F1DE581C4D8DAA000A2701 /* SwiftMandrill.h in Headers */ = {isa = PBXBuildFile; fileRef = 83F1DE571C4D8DAA000A2701 /* SwiftMandrill.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		83F1DE5F1C4D8DAA000A2701 /* SwiftMandrill.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F1DE541C4D8DAA000A2701 /* SwiftMandrill.framework */; };
 		83F1DE641C4D8DAA000A2701 /* SwiftMandrillTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F1DE631C4D8DAA000A2701 /* SwiftMandrillTests.swift */; };
@@ -55,10 +55,10 @@
 		83B4491C1C4F01B000FC1D65 /* TestDataModelSpecs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestDataModelSpecs.swift; sourceTree = "<group>"; };
 		83B449201C4F031300FC1D65 /* email_result.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = email_result.json; sourceTree = "<group>"; };
 		83B449221C4F071D00FC1D65 /* email_result_array.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = email_result_array.json; sourceTree = "<group>"; };
-		83B449241C4F07A100FC1D65 /* ObjectFromJson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectFromJson.swift; sourceTree = "<group>"; };
 		83B449271C4F0ABE00FC1D65 /* email_to.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = email_to.json; sourceTree = "<group>"; };
 		83B449291C4F0CA600FC1D65 /* email.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = email.json; sourceTree = "<group>"; };
 		83B4492B1C4F0E1400FC1D65 /* error.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = error.json; sourceTree = "<group>"; };
+		83B4492E1C5004D300FC1D65 /* ObjectParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectParser.swift; sourceTree = "<group>"; };
 		83F1DE541C4D8DAA000A2701 /* SwiftMandrill.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftMandrill.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83F1DE571C4D8DAA000A2701 /* SwiftMandrill.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftMandrill.h; sourceTree = "<group>"; };
 		83F1DE591C4D8DAA000A2701 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -106,7 +106,6 @@
 			children = (
 				83B4491F1C4F02C300FC1D65 /* Test Data */,
 				83B449191C4F011A00FC1D65 /* JSONFileReader.swift */,
-				83B449241C4F07A100FC1D65 /* ObjectFromJson.swift */,
 			);
 			name = JSON;
 			sourceTree = "<group>";
@@ -121,6 +120,14 @@
 				83B4492B1C4F0E1400FC1D65 /* error.json */,
 			);
 			path = "Test Data";
+			sourceTree = "<group>";
+		};
+		83B4492D1C5004C000FC1D65 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				83B4492E1C5004D300FC1D65 /* ObjectParser.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 		83F1DE4A1C4D8DAA000A2701 = {
@@ -146,6 +153,7 @@
 		83F1DE561C4D8DAA000A2701 /* SwiftMandrill */ = {
 			isa = PBXGroup;
 			children = (
+				83B4492D1C5004C000FC1D65 /* Util */,
 				83F1DE711C4D9263000A2701 /* Api */,
 				83F1DE701C4D9236000A2701 /* Supporting Files */,
 				83F1DE6F1C4D91EC000A2701 /* Model */,
@@ -403,6 +411,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83F1DE731C4D92FA000A2701 /* MandrillAPI.swift in Sources */,
+				83B4492F1C5004D300FC1D65 /* ObjectParser.swift in Sources */,
 				838046691C4DA8AC005EE191 /* MandrillResult.swift in Sources */,
 				8380466B1C4EB534005EE191 /* MandrillTo.swift in Sources */,
 				838046651C4D9481005EE191 /* Constants.swift in Sources */,
@@ -418,7 +427,6 @@
 			files = (
 				83B4491E1C4F01B000FC1D65 /* TestDataModelSpecs.swift in Sources */,
 				83F1DE641C4D8DAA000A2701 /* SwiftMandrillTests.swift in Sources */,
-				83B449261C4F07A100FC1D65 /* ObjectFromJson.swift in Sources */,
 				838046761C4ED23E005EE191 /* MandrillApiSpecs.swift in Sources */,
 				83B4491B1C4F011A00FC1D65 /* JSONFileReader.swift in Sources */,
 			);

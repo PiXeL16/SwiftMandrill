@@ -102,7 +102,8 @@ public class MandrillAPI {
                     
                     if let data = response.data
                     {
-                        if let errorResult = Mapper<MandrillError>().map(String(data: data, encoding: NSUTF8StringEncoding))
+                        
+                        if let errorResult: MandrillError = ObjectParser.objectFromJsonString(String(data: data, encoding: NSUTF8StringEncoding))
                         {
                             errorMessage = errorResult.message!
                         }
@@ -117,7 +118,7 @@ public class MandrillAPI {
                     
                     if let value: AnyObject = response.result.value {
                         
-                        let emailResults:[MandrillEmailResult] = Mapper<MandrillEmailResult>().mapArray(value)!
+                        let emailResults:[MandrillEmailResult] = ObjectParser.objectFromJsonArray(value)!
                         
                         let result = MandrillResult(success: true, emailResults: emailResults)
                         
