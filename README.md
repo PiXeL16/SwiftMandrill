@@ -8,7 +8,7 @@ This provide a simple alternative when you need to send an email with your iOS a
 
 :monkey: Mandrill
 ----
-[Mandrill](https://www.google.com) provides a simple  reliable API for transactional emails. You will need to have a `Mandrill` account to use the client and a `API` key.
+[Mandrill](https://www.mandrill.com/) provides a simple  reliable API for transactional emails. You will need to have a `Mandrill` account to use the client and a `API` key.
 
 :octocat: Installation
 ----
