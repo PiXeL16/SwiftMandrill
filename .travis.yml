@@ -7,7 +7,7 @@ env:
 before_install:
   - sudo gem install cocoapods-keys
 install:
-  - bundle exec pod keys set MANDRILL_API "-"
+  - pod keys set MANDRILL_API "-"
 script:
   - set -o pipefail
   - xcodebuild -version
