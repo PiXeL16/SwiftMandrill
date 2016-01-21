@@ -5,6 +5,7 @@ env:
   - LC_CTYPE=en_US.UTF-8
   - LANG=en_US.UTF-8
 install:
+  - gem install cocoapods-keys
   - bundle exec pod keys set MANDRILL_API "-"
 script:
   - set -o pipefail
