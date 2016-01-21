@@ -12,7 +12,7 @@ import Quick
 import SwiftMandrill
 import Keys
 
-/// API Specs hiting the real API. TODO: Add HUB
+/// API Specs hiting the real API. TODO: Add Stubbed request
 class MandrillApiSpecs: QuickSpec {
     override func spec() {
         
