@@ -72,5 +72,18 @@ class TestDataModelSpecs: QuickSpec{
             expect(error!.status).toNot(beNil())
             
         }
+        
+        it("Decode error result"){
+            
+            let error: MandrillError? = ObjectParser.objectFromJson(JSONFileReader.JSON(fromFile: "error"))
+            
+            expect(error).toNot(beNil())
+            expect(error!.message).toNot(beNil())
+            expect(error!.code).toNot(beNil())
+            expect(error!.name).toNot(beNil())
+            expect(error!.status).toNot(beNil())
+            
+        }
+        
     }
 }

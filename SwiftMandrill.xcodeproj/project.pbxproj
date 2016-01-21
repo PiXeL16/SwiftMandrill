@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		79B69B51E466032F1EE5C688 /* Pods_SwiftMandrillTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDBDA66A8218612AE0C967B3 /* Pods_SwiftMandrillTests.framework */; };
 		835399401C4EEAD00089FAC5 /* MandrillError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8353993F1C4EEAD00089FAC5 /* MandrillError.swift */; };
+		837E3BCC1C50A1D1000A3BCE /* UtilsSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837E3BCB1C50A1D1000A3BCE /* UtilsSpecs.swift */; };
 		838046651C4D9481005EE191 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838046641C4D9481005EE191 /* Constants.swift */; };
 		838046671C4D9E9E005EE191 /* MandrillEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838046661C4D9E9E005EE191 /* MandrillEmail.swift */; };
 		838046691C4DA8AC005EE191 /* MandrillResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838046681C4DA8AC005EE191 /* MandrillResult.swift */; };
@@ -45,6 +46,7 @@
 		6465ABE755C786F0D5C9EE39 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		73E4AEAF62018D0943795764 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8353993F1C4EEAD00089FAC5 /* MandrillError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MandrillError.swift; sourceTree = "<group>"; };
+		837E3BCB1C50A1D1000A3BCE /* UtilsSpecs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilsSpecs.swift; sourceTree = "<group>"; };
 		838046641C4D9481005EE191 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		838046661C4D9E9E005EE191 /* MandrillEmail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MandrillEmail.swift; sourceTree = "<group>"; };
 		838046681C4DA8AC005EE191 /* MandrillResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MandrillResult.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				83F1DE651C4D8DAA000A2701 /* Info.plist */,
 				838046751C4ED23E005EE191 /* MandrillApiSpecs.swift */,
 				83B4491C1C4F01B000FC1D65 /* TestDataModelSpecs.swift */,
+				837E3BCB1C50A1D1000A3BCE /* UtilsSpecs.swift */,
 			);
 			path = SwiftMandrillTests;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83B4491E1C4F01B000FC1D65 /* TestDataModelSpecs.swift in Sources */,
+				837E3BCC1C50A1D1000A3BCE /* UtilsSpecs.swift in Sources */,
 				83F1DE641C4D8DAA000A2701 /* SwiftMandrillTests.swift in Sources */,
 				838046761C4ED23E005EE191 /* MandrillApiSpecs.swift in Sources */,
 				83B4491B1C4F011A00FC1D65 /* JSONFileReader.swift in Sources */,
