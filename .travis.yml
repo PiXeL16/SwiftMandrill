@@ -12,6 +12,6 @@ script:
   - set -o pipefail
   - xcodebuild -version
   - xcodebuild -showsdks
-  - xcodebuild -workspace SwiftMandrill.xcworkspace -scheme "SwiftMandrill" -destination "OS=9.2,name=iPhone 6s Plus"
+  - xcodebuild -workspace SwiftMandrill.xcworkspace -scheme "SwiftMandrill" -destination "OS=9.2,name=iPhone 6s Plus" | xcpretty -c
 after_success:
   - bash <(curl -s https://codecov.io/bash)
