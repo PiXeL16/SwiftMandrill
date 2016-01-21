@@ -6,13 +6,11 @@ env:
   - LANG=en_US.UTF-8
 before_install:
   - sudo gem install cocoapods-keys
-install:
   - pod keys set MANDRILL_API "-"
 script:
   - set -o pipefail
   - xcodebuild -version
   - xcodebuild -showsdks
-  - pod install
-  - xcodebuild -workspace SwiftMandrill.xcworkspace -scheme "SwiftMandrill" -destination "OS=9.2,name=iPhone 6s Plus" | xcpretty -c
+  - xcodebuild -workspace SwiftMandrill.xcworkspace -scheme "SwiftMandrill" -destination "OS=9.2,name=iPhone 6s Plus" | xcpretty -c test GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES | xcpretty -c
 after_success:
   - bash <(curl -s https://codecov.io/bash)
