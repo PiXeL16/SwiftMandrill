@@ -20,11 +20,11 @@ Usage is very simple
 ```swift
 let api = MandrillAPI(ApiKey: "YourApiKey")
 
-api.sendEmail(from: "from@test.com",
-              to: "to@test.com",
+api.sendEmail(from:    "from@test.com",
+              to:      "to@test.com",
               subject: "My subject",
-              html: "<b>This is a Test</b>",
-              text: "This is a test"){ mandrillResult in
+              html:    "<b>This is a Test</b>",
+              text:    "This is a test"){ mandrillResult in
     if mandrillResult.success {
       print("Email was sent!")
     }
@@ -36,11 +36,11 @@ You can also send an email to several recipients by passing an array
 ```swift
 let api = MandrillAPI(ApiKey: "YourApiKey")
 
-api.sendEmail(from: "from@test.com",
-             to: ["to@test.com","to@test2.com"],
-             subject: "My subject",
-             html: "<b>This is a Test</b>",
-            text: "This is a test"){ mandrillResult in
+api.sendEmail(from:    "from@test.com",
+              to:      ["to@test.com","to@test2.com"],
+              subject: "My subject",
+              html:    "<b>This is a Test</b>",
+              text:    "This is a test"){ mandrillResult in
     if mandrillResult.success {
       print("Email was sent!")
     }
@@ -52,12 +52,12 @@ If inline parameters is not your thing you can also provide a `MandrillEmail` ob
 ```swift
 let api = MandrillAPI(ApiKey: "YourApiKey")
 
-let email = MandrillEmail()
-email.from = "test@test.com"
-email.to   = "totest@gmail.com"
+let email     = MandrillEmail()
+email.from    = "test@test.com"
+email.to      = "totest@gmail.com"
 email.subject = "this is a test"
-email.html = "<b><Test/b>"
-email.text = "Test"   
+email.html    = "<b><Test/b>"
+email.text    = "Test"   
 
  api.sendEmail(withEmail: email){ mandrillResult in
     if mandrillResult.success {
