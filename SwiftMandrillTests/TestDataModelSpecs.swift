@@ -13,6 +13,7 @@ import SwiftMandrill
 import ObjectMapper
 import Keys
 
+/// Model specs using fake data.
 class TestDataModelSpecs: QuickSpec{
     override func spec() {
         
