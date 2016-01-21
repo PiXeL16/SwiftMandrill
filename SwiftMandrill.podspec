@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
 
   s.name         = "SwiftMandrill"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "A simple iOS client for the Mandrill Mail API"
   s.description  = <<-DESC
-  SwiftMandrill provides a simple API to send emails in your App
-                   DESC
+SwiftMandrill provides simple alternative when you need to send an email with your iOS app.               
+    DESC
 
   s.homepage     = "https://github.com/PiXeL16/SwiftMandrill"
   s.license      = { :type => "MIT", :file => "LICENSE" }
