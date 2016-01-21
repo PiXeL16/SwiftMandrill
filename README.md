@@ -1,6 +1,5 @@
-# SwiftMandrill
-A simple iOS client for the Mandrill Mail API
-
+# SwiftMandrill [![Build Status](https://travis-ci.org/PiXeL16/SwiftMandrill.svg?branch=master)](https://travis-ci.org/PiXeL16/SwiftMandrill/) [![codecov.io](https://codecov.io/github/PiXeL16/SwiftMandrill/coverage.svg?branch=master)](https://codecov.io/github/PiXeL16/SwiftMandrill?branch=master) [![Cocoapods Compatible](https://img.shields.io/cocoapods/v/SwiftMandrill.svg)](https://img.shields.io/cocoapods/v/SwiftMandrill.svg) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/PiXeL16/SwiftMandrill/master/LICENSE)
+SwiftMandrill provides simple alternative when you need to send an email with your iOS app.
 :question: Why?
 ----
 Sometimes, there is the need to setup a simple email form in your iOS app, or trigger an email after an action,  without having to setup your own service for that, sometimes you don't want to use the `MailComposeViewController` or use a `SMTP` library.
