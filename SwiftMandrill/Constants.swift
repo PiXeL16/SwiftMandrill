@@ -13,6 +13,6 @@ import Foundation
  */
 public struct Constants {
     
-    public static let baseAPIURL = "https://mandrillapp.com/api/1.0";
+    public static let baseAPIURL = "https://mandrillapp.com/api/1.0"
 
 }
