@@ -82,6 +82,6 @@ public class MandrillEmail: Mappable{
         from    <- map["from_email"]
         subject <- map["subject"]
         html    <- map["html"]
-        text    <- map["type"]
+        text    <- map["text"]
     }
 }
