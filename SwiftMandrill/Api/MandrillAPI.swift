@@ -56,16 +56,17 @@ public class MandrillAPI {
      Sends an email with the inline parameters
      
      - parameter from:              from email
+     - parameter fromName:          name of the person sending the email
      - parameter to:                to email
      - parameter subject:           subject of the email
      - parameter html:              html
      - parameter text:              text
      - parameter completionHandler: the completion handler
      */
-    public func sendEmail(from from:String, to:String, subject:String, html:String?, text:String?, completionHandler:(MandrillResult) -> Void) -> Void
+    public func sendEmail(from from:String, fromName:String, to:String, subject:String, html:String?, text:String?, completionHandler:(MandrillResult) -> Void) -> Void
         
     {
-        let email = MandrillEmail(from: from, to: to, subject: subject, html: html, text: text)
+        let email = MandrillEmail(from: from, fromName:fromName, to: to, subject: subject, html: html, text: text)
         
         return sendEmail(withEmail: email, completionHandler: completionHandler)
     }
@@ -80,12 +81,12 @@ public class MandrillAPI {
      - parameter text:              text
      - parameter completionHandler: the completion handler
      */
-    public func sendEmail(from from:String, to:[String], subject:String, html:String?, text:String?, completionHandler:(MandrillResult) -> Void) -> Void
+    public func sendEmail(from from:String, fromName:String, to:[String], subject:String, html:String?, text:String?, completionHandler:(MandrillResult) -> Void) -> Void
         
     {
         let emails = to.map({MandrillTo(email: $0)})
         
-        let email = MandrillEmail(from: from, to: emails, subject: subject, html: html, text: text)
+        let email = MandrillEmail(from: from, fromName:fromName, to: emails, subject: subject, html: html, text: text)
         
         return sendEmail(withEmail: email, completionHandler: completionHandler)
     }

@@ -22,7 +22,7 @@ class MandrillApiSpecs: QuickSpec {
             
             let api = MandrillAPI(ApiKey: "")
             
-            let email = MandrillEmail(from: "test@test.com", to: "test@gmail.com", subject: "test", html: "test", text: "test")
+            let email = MandrillEmail(from: "test@test.com",fromName: "Test", to: "test@gmail.com", subject: "test", html: "test", text: "test")
             
             var result : MandrillResult? = nil
             
@@ -43,7 +43,7 @@ class MandrillApiSpecs: QuickSpec {
         
             let api = MandrillAPI(ApiKey: keys.mANDRILL_API())
             
-            let email = MandrillEmail(from: "test@test.com", to: "cjimenez16@gmail.com", subject: "this is s test", html: "test", text: "test")
+            let email = MandrillEmail(from: "test@test.com", fromName: "Test", to: "cjimenez16@gmail.com", subject: "this is s test", html: "test", text: "test")
             
             var result : MandrillResult? = nil
             
@@ -65,7 +65,7 @@ class MandrillApiSpecs: QuickSpec {
             
             var result : MandrillResult? = nil
             
-            api.sendEmail(from: "test@test.com", to: "cjimenez16@gmail.com", subject: "test", html: "test", text: "test"){ mandrillResult in
+            api.sendEmail(from: "test@test.com", fromName: "Test", to: "cjimenez16@gmail.com", subject: "test", html: "test", text: "test"){ mandrillResult in
                 result = mandrillResult
             }
 
@@ -83,7 +83,7 @@ class MandrillApiSpecs: QuickSpec {
             
             var result : MandrillResult? = nil
             
-            api.sendEmail(from: "test@test.com", to: ["cjimenez16@gmail.com","test2@test.com"], subject: "test", html: "test", text: "test"){ mandrillResult in
+            api.sendEmail(from: "test@test.com",fromName: "test", to: ["cjimenez16@gmail.com","test2@test.com"], subject: "test", html: "test", text: "test"){ mandrillResult in
                 result = mandrillResult
             }
             
@@ -104,7 +104,7 @@ class MandrillApiSpecs: QuickSpec {
             let to1 = MandrillTo(email: "test@test.com")
             let to2 = MandrillTo(email: "test@test2.com")
             
-            let email = MandrillEmail(from: "test@test.com", to: [to1,to2], subject: "test", html: "test", text: "test")
+            let email = MandrillEmail(from: "test@test.com", fromName: "test", to: [to1,to2], subject: "test", html: "test", text: "test")
             
             api.sendEmail(withEmail: email){ mandrillResult in
                 result = mandrillResult

@@ -57,6 +57,7 @@ class TestDataModelSpecs: QuickSpec{
             
             expect(emailObject).toNot(beNil())
             expect(emailObject!.from).toNot(beNil())
+            expect(emailObject!.fromName).toNot(beNil())
             expect(emailObject!.to!.count).to(equal(1))
             
         }
