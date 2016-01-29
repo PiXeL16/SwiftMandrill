@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "SwiftMandrill"
-  s.version      = "1.0.1"
+  s.version      = "1.0.2"
   s.summary      = "A simple iOS client for the Mandrill Mail API"
   s.description  = <<-DESC
 SwiftMandrill provides simple alternative when you need to send an email with your iOS app.               
