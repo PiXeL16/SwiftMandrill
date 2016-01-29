@@ -21,6 +21,7 @@ Usage is very simple
 let api = MandrillAPI(ApiKey: "YourApiKey")
 
 api.sendEmail(from:    "from@test.com",
+              fromName:"Chris Jimenez",
               to:      "to@test.com",
               subject: "My subject",
               html:    "<b>This is a Test</b>",
@@ -37,6 +38,7 @@ You can also send an email to several recipients by passing an array
 let api = MandrillAPI(ApiKey: "YourApiKey")
 
 api.sendEmail(from:    "from@test.com",
+              fromName:"Chris Jimenez",
               to:      ["to@test.com","to@test2.com"],
               subject: "My subject",
               html:    "<b>This is a Test</b>",
@@ -54,6 +56,7 @@ let api = MandrillAPI(ApiKey: "YourApiKey")
 
 let email     = MandrillEmail()
 email.from    = "test@test.com"
+email.fromName= "Chris Jimenez"
 email.to      = "totest@gmail.com"
 email.subject = "this is a test"
 email.html    = "<b><Test/b>"
