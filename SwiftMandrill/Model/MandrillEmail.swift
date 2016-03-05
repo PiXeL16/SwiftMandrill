@@ -12,11 +12,12 @@ import ObjectMapper
 //Email object to be send with the API
 public class MandrillEmail: Mappable{
     
-    public var to      :[MandrillTo]?
-    public var from    :String?
-    public var subject :String?
-    public var html    :String?
-    public var text    :String?
+    public var to       :[MandrillTo]?
+    public var from     :String?
+    public var fromName :String?
+    public var subject  :String?
+    public var html     :String?
+    public var text     :String?
     
     public required init?(_ map: Map) {}
     
@@ -26,6 +27,7 @@ public class MandrillEmail: Mappable{
      Constructor that receives an array of several to emails
      
      - parameter from:
+     - parameter fromName: The name of the person sending the email
      - parameter to:
      - parameter subject:
      - parameter html:
@@ -33,11 +35,12 @@ public class MandrillEmail: Mappable{
      
      - returns:
      */
-    public convenience init(from: String, to: [MandrillTo], subject: String, html: String?, text: String?)
+    public convenience init(from: String, fromName:String, to: [MandrillTo], subject: String, html: String?, text: String?)
     {
         self.init()
         
         self.from = from
+        self.fromName = fromName
         self.subject = subject
         self.html = html
         self.text = text
@@ -57,11 +60,12 @@ public class MandrillEmail: Mappable{
      
      - returns: <#return value description#>
      */
-    public convenience init(from: String, to: String, subject: String, html: String?, text: String?)
+    public convenience init(from: String, fromName:String, to: String, subject: String, html: String?, text: String?)
     {
         self.init()
         
         self.from = from
+        self.fromName = fromName
         self.subject = subject
         self.html = html
         self.text = text
@@ -78,10 +82,11 @@ public class MandrillEmail: Mappable{
      - parameter map: <#map description#>
      */
     public func mapping(map: Map){
-        to      <- map["to"]
-        from    <- map["from_email"]
-        subject <- map["subject"]
-        html    <- map["html"]
-        text    <- map["type"]
+        to       <- map["to"]
+        from     <- map["from_email"]
+        fromName <- map["from_name"]
+        subject  <- map["subject"]
+        html     <- map["html"]
+        text     <- map["text"]
     }
 }
