@@ -8,8 +8,8 @@ pod 'ObjectMapper', '~> 2.2.2’
 
 
 target 'SwiftMandrillTests' do
-  pod 'Quick', '~> 0.8.0'
-  pod 'Nimble', '~> 3.0.0'
+  pod 'Quick', '~> 1.0.0'
+  pod 'Nimble', '~> 5.1.1'
 
 plugin 'cocoapods-keys', {
   :project => "SwiftMandrill",
