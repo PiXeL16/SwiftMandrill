@@ -88,8 +88,6 @@ open class MandrillAPI {
      - parameter completionHandler: Result completion handler
      */
     open func sendEmail(withEmail email:MandrillEmail, completionHandler:@escaping (MandrillResult) -> Void) -> Void {
-        let test = Mapper().to
-        
         let params : [String:AnyObject] = [
             "key": self.apiKey as AnyObject,
             "message": Mapper().toJSON(email) as AnyObject
