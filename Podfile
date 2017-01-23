@@ -1,10 +1,10 @@
-platform :ios, '8.0'
+platform :ios, ‘9.0’
 use_frameworks!
 
 plugin 'cocoapods-keys'
 
-pod 'Alamofire', '~> 3.0'
-pod 'ObjectMapper', '~> 1.1'
+pod 'Alamofire', '~> 4.3.0’
+pod 'ObjectMapper', '~> 2.2.2’
 
 
 target 'SwiftMandrillTests' do

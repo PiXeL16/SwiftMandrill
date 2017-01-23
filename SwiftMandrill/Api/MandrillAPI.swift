@@ -10,13 +10,13 @@ import Alamofire
 import ObjectMapper
 
 /// Mandrill API access and definition
-public class MandrillAPI {
+open class MandrillAPI {
     
-    private let apiKey : String
+    fileprivate let apiKey : String
     
     
     //ApiRouter enum that will take care of the routing of the urls and paths of the API
-    private enum ApiRouter: URLStringConvertible {
+    fileprivate enum ApiRouter: URLStringConvertible {
         
         static let baseURL = Constants.baseAPIURL;
         
@@ -32,8 +32,8 @@ public class MandrillAPI {
         
         var URLString : String{
             
-            let url = NSURL(string: ApiRouter.baseURL)!
-            let urlRequest = NSMutableURLRequest(URL: url.URLByAppendingPathComponent(path))
+            let url = URL(string: ApiRouter.baseURL)!
+            let urlRequest = NSMutableURLRequest(url: url.appendingPathComponent(path))
             return urlRequest.URLString;
         }
         
@@ -63,7 +63,7 @@ public class MandrillAPI {
      - parameter text:              text
      - parameter completionHandler: the completion handler
      */
-    public func sendEmail(from from:String, fromName:String, to:String, subject:String, html:String?, text:String?, completionHandler:(MandrillResult) -> Void) -> Void
+    open func sendEmail(from:String, fromName:String, to:String, subject:String, html:String?, text:String?, completionHandler:(MandrillResult) -> Void) -> Void
         
     {
         let email = MandrillEmail(from: from, fromName:fromName, to: to, subject: subject, html: html, text: text)
@@ -81,7 +81,7 @@ public class MandrillAPI {
      - parameter text:              text
      - parameter completionHandler: the completion handler
      */
-    public func sendEmail(from from:String, fromName:String, to:[String], subject:String, html:String?, text:String?, completionHandler:(MandrillResult) -> Void) -> Void
+    open func sendEmail(from:String, fromName:String, to:[String], subject:String, html:String?, text:String?, completionHandler:(MandrillResult) -> Void) -> Void
         
     {
         let emails = to.map({MandrillTo(email: $0)})
@@ -98,7 +98,7 @@ public class MandrillAPI {
      - parameter email:             Email Object
      - parameter completionHandler: Result completion handler
      */
-    public func sendEmail(withEmail email:MandrillEmail, completionHandler:(MandrillResult) -> Void) -> Void
+    open func sendEmail(withEmail email:MandrillEmail, completionHandler:@escaping (MandrillResult) -> Void) -> Void
     {
         
         let params : [String:AnyObject]  = [
