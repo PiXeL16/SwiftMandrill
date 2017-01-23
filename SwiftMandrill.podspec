@@ -15,7 +15,7 @@ SwiftMandrill provides simple alternative when you need to send an email with yo
 
   s.platform     = :ios, "9.0"
 
-  s.source       = { :git => "https://github.com/PiXeL16/SwiftMandrill.git", :tag => s.version }
+  s.source       = { :git => "https://github.com/Adrage/SwiftMandrill.git", :tag => s.version }
   s.source_files  = "SwiftMandrill/", "SwiftMandrill/**/*.{h,m,swift}"
 
   s.requires_arc = true
