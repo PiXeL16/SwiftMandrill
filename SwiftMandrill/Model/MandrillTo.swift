@@ -22,7 +22,7 @@ open class MandrillTo: Mappable{
     open var name: String?
     open var toType: ToType?
     
-    public required init?(_ map: Map) {}
+    public required init?(map: Map) {}
     
     public init(email: String)
     {
@@ -31,7 +31,7 @@ open class MandrillTo: Mappable{
         self.toType = .To
     }
     
-    open func mapping(_ map: Map) {
+    open func mapping(map: Map) {
         email  <- map["email"]
         name   <- map["name"]
         toType <- map["type"]

@@ -20,8 +20,7 @@ open class ObjectParser
      - returns: object conforming to Mappable
      */
     open class func objectFromJson<T: Mappable>(_ json: AnyObject?) -> T? {
-        
-        return Mapper<T>().map(json)
+        return Mapper<T>().map(JSON: json as! [String : Any])
     }
     
     
@@ -33,8 +32,10 @@ open class ObjectParser
      - returns:
      */
     open class func objectFromJsonString<T: Mappable>(_ json: String?) -> T? {
-        
-        return Mapper<T>().map(json)
+        if let _json = json {
+            return Mapper<T>().map(JSONString: _json)
+        }
+        return nil
     }
     
     /**
@@ -44,8 +45,10 @@ open class ObjectParser
      - returns: array of objects
      */
     open class func objectFromJsonArray<T: Mappable>(_ json: AnyObject?) -> [T]? {
-        
-        return Mapper<T>().mapArray(json)
+        if let _json = json as? [[String : Any]] {
+            return Mapper<T>().mapArray(JSONArray: _json)
+        }
+        return nil
     }
 
     

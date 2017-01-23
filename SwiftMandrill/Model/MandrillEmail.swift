@@ -19,7 +19,7 @@ open class MandrillEmail: Mappable{
     open var html     :String?
     open var text     :String?
     
-    public required init?(_ map: Map) {}
+    public required init?(map: Map) {}
     
     public init(){}
     
@@ -81,7 +81,7 @@ open class MandrillEmail: Mappable{
      
      - parameter map: <#map description#>
      */
-    open func mapping(_ map: Map){
+    open func mapping(map: Map){
         to       <- map["to"]
         from     <- map["from_email"]
         fromName <- map["from_name"]

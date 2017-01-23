@@ -17,9 +17,9 @@ open class MandrillEmailResult: Mappable {
     open var id: String?
     open var rejectReason: String?
     
-    public required init?(_ map: Map) {}
+    public required init?(map: Map) {}
     
-    open func mapping(_ map: Map) {
+    open func mapping(map: Map) {
         email        <- map["email"]
         status       <- map["status"]
         rejectReason <- map["reject_reason"]

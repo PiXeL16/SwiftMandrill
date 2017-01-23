@@ -18,9 +18,9 @@ open class MandrillError:Mappable {
     open var message :String?
     
     
-    public required init?(_ map: Map) {}
+    public required init?(map: Map) {}
     
-    open func mapping(_ map: Map) {
+    open func mapping(map: Map) {
         status     <- map["status"]
         code       <- map["code"]
         name       <- map["name"]
