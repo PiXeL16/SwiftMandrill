@@ -18,15 +18,15 @@ class JSONFileReader {
      - returns: Object dic
      */
     class func JSON(fromFile file: String) -> AnyObject? {
-        let path = NSBundle(forClass: self).pathForResource(file, ofType: "json")
+        let path = Bundle(for: self).path(forResource: file, ofType: "json")
         
         if path != nil {
-            if let data = NSData(contentsOfFile: path!) {
+            if let data = try? Data(contentsOf: URL(fileURLWithPath: path!)) {
                                 
-                return try! NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(rawValue: 0))
+                return try! JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions(rawValue: 0)) as AnyObject?
             }
         }
         
-        return .None
+        return .none
     }
 }

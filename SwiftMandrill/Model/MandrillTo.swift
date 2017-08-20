@@ -10,7 +10,7 @@ import Foundation
 import ObjectMapper
 
 /// Represent a to object in the email
-public class MandrillTo: Mappable{
+open class MandrillTo: Mappable{
     
     public enum ToType : String {
         case To = "to"
@@ -18,11 +18,11 @@ public class MandrillTo: Mappable{
         case BCC = "bcc"
     }
     
-    public var email: String?
-    public var name: String?
-    public var toType: ToType?
+    open var email: String?
+    open var name: String?
+    open var toType: ToType?
     
-    public required init?(_ map: Map) {}
+    public required init?(map: Map) {}
     
     public init(email: String)
     {
@@ -31,7 +31,7 @@ public class MandrillTo: Mappable{
         self.toType = .To
     }
     
-    public func mapping(map: Map) {
+    open func mapping(map: Map) {
         email  <- map["email"]
         name   <- map["name"]
         toType <- map["type"]

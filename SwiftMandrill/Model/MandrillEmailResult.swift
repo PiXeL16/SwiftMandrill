@@ -10,16 +10,16 @@ import Foundation
 import ObjectMapper
 
 /// Class for each email result on the send email request
-public class MandrillEmailResult: Mappable {
+open class MandrillEmailResult: Mappable {
     
-    public var email: String?
-    public var status: String?
-    public var id: String?
-    public var rejectReason: String?
+    open var email: String?
+    open var status: String?
+    open var id: String?
+    open var rejectReason: String?
     
-    public required init?(_ map: Map) {}
+    public required init?(map: Map) {}
     
-    public func mapping(map: Map) {
+    open func mapping(map: Map) {
         email        <- map["email"]
         status       <- map["status"]
         rejectReason <- map["reject_reason"]

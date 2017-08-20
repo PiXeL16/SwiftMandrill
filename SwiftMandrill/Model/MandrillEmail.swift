@@ -10,16 +10,16 @@ import Foundation
 import ObjectMapper
 
 //Email object to be send with the API
-public class MandrillEmail: Mappable{
+open class MandrillEmail: Mappable{
     
-    public var to       :[MandrillTo]?
-    public var from     :String?
-    public var fromName :String?
-    public var subject  :String?
-    public var html     :String?
-    public var text     :String?
+    open var to       :[MandrillTo]?
+    open var from     :String?
+    open var fromName :String?
+    open var subject  :String?
+    open var html     :String?
+    open var text     :String?
     
-    public required init?(_ map: Map) {}
+    public required init?(map: Map) {}
     
     public init(){}
     
@@ -81,7 +81,7 @@ public class MandrillEmail: Mappable{
      
      - parameter map: <#map description#>
      */
-    public func mapping(map: Map){
+    open func mapping(map: Map){
         to       <- map["to"]
         from     <- map["from_email"]
         fromName <- map["from_name"]
